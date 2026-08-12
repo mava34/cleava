@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cleava – Pääkaupunkiseudun luotettava siivouspalvelu. Kotisiivous, muuttosiivous, ikkunanpesu. Tyytyväisyystakuu." />
+  <title>Cleava – Luotettava siivouspalvelu pääkaupunkiseudulla</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     STICKY HEADER
+     ============================================================ -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+
+    <!-- LOGO — TODO: swap <span> for <img src="images/cleava-logo.svg" alt="Cleava" width="110" height="34"> -->
+    <a href="#" class="logo" aria-label="Cleava – etusivulle">
+      <span class="logo-mark">C</span>
+      <span class="logo-word">Cleava</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Päänavigaatio">
+      <ul>
+        <li><a href="#palvelut"    data-fi="Palvelut"      data-en="Services">Palvelut</a></li>
+        <li><a href="#nain-toimii" data-fi="Näin toimii"   data-en="How It Works">Näin toimii</a></li>
+        <li><a href="#hinnasto"    data-fi="Hinnasto"      data-en="Pricing">Hinnasto</a></li>
+        <li><a href="#yhteystiedot" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</a></li>
+      </ul>
+    </nav>
+
+    <!-- Language switcher — desktop -->
+    <div class="lang-switcher" role="group" aria-label="Kielivalinta / Language">
+      <button class="lang-btn active" data-lang="fi" aria-pressed="true">FI</button>
+      <span aria-hidden="true">|</span>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+
+    <div class="header-right">
+      <a href="tel:0451878083" class="btn btn-gradient btn-sm" aria-label="Soita: 045 187 8083">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.66A2 2 0 012 .81h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        045 187 8083
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Avaa valikko" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobile-menu" hidden role="dialog" aria-modal="true" aria-label="Mobiilinavigaatio">
+  <button class="mobile-close" id="mobile-close" aria-label="Sulje valikko">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <nav>
+    <ul>
+      <li><a href="#palvelut"     class="mobile-link" data-fi="Palvelut"      data-en="Services">Palvelut</a></li>
+      <li><a href="#nain-toimii"  class="mobile-link" data-fi="Näin toimii"   data-en="How It Works">Näin toimii</a></li>
+      <li><a href="#hinnasto"     class="mobile-link" data-fi="Hinnasto"      data-en="Pricing">Hinnasto</a></li>
+      <li><a href="#yhteystiedot" class="mobile-link" data-fi="Yhteystiedot"  data-en="Contact">Yhteystiedot</a></li>
+    </ul>
+  </nav>
+  <!-- Language switcher — mobile -->
+  <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Kielivalinta / Language">
+    <button class="lang-btn active" data-lang="fi" aria-pressed="true">FI</button>
+    <span aria-hidden="true">|</span>
+    <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+  <a href="tel:0451878083" class="btn btn-gradient mobile-cta">📞 045 187 8083</a>
+</div>
+
+
+<main>
+
+<!-- ============================================================
+     HERO — Light, aurora bg, floating glass card
+     ============================================================ -->
+<section class="hero" id="hero">
+
+  <div class="aurora" aria-hidden="true">
+    <div class="aurora-blob a1"></div>
+    <div class="aurora-blob a2"></div>
+    <div class="aurora-blob a3"></div>
+  </div>
+
+  <div class="container hero-inner">
+
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="badge-stars" aria-hidden="true">★★★★★</span>
+        <span data-fi="4.9 · 56 Google-arvostelua" data-en="4.9 · 56 Google reviews">4.9 · 56 Google-arvostelua</span>
+      </div>
+      <p class="hero-eyebrow">Helsinki · Espoo · Vantaa · Kauniainen</p>
+      <h1 class="hero-headline"
+          data-fi="Pääkaupunkiseudun luotetuin tapa pitää koti puhtaana."
+          data-en="The most trusted way to keep your home clean in the Helsinki region.">
+        Pääkaupunkiseudun luotetuin tapa pitää koti puhtaana.
+      </h1>
+      <p class="hero-sub"
+         data-fi="Taustatarkistetut ammattilaiset. Tyytyväisyystakuu. Ei pieniä printtejä."
+         data-en="Background-checked professionals. Satisfaction guarantee. No fine print.">
+        Taustatarkistetut ammattilaiset. Tyytyväisyystakuu. Ei pieniä printtejä.
+      </p>
+      <div class="hero-ctas">
+        <a href="#yhteystiedot" class="btn btn-gradient btn-lg">
+          <span data-fi="Pyydä ilmainen tarjous" data-en="Request a free quote">Pyydä ilmainen tarjous</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#palvelut" class="btn btn-ghost btn-lg"
+           data-fi="Katso palvelut" data-en="View services">Katso palvelut</a>
+      </div>
+    </div>
+
+    <!-- Right: floating glass card
+         TODO: Replace / accompany with client photo or video:
+         <img src="images/hero.jpg" alt="Puhdas, valoisa koti" class="hero-photo" />
+         or <video autoplay muted loop playsinline src="videos/hero.mp4"></video> -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-ring ring-1"></div>
+      <div class="hero-ring ring-2"></div>
+
+      <div class="hero-card">
+        <div class="hero-card-shine"></div>
+
+        <div class="hc-head">
+          <div class="hc-avatar">C</div>
+          <div class="hc-head-text">
+            <div class="hc-name"   data-fi="Tarjouspyyntö"         data-en="Quote request">Tarjouspyyntö</div>
+            <div class="hc-brand"  data-fi="Cleava Siivouspalvelut" data-en="Cleava Cleaning Services">Cleava Siivouspalvelut</div>
+          </div>
+          <div class="hc-status"   data-fi="✓ Valmis"              data-en="✓ Ready">✓ Valmis</div>
+        </div>
+
+        <div class="hc-body">
+          <div class="hc-row">
+            <span class="hc-label" data-fi="Palvelu"      data-en="Service">Palvelu</span>
+            <span class="hc-tag"   data-fi="Kotisiivous"  data-en="Home cleaning">Kotisiivous</span>
+          </div>
+          <div class="hc-row">
+            <span class="hc-label" data-fi="Postinumero"  data-en="Postal code">Postinumero</span>
+            <span class="hc-val">00100 · Helsinki</span>
+          </div>
+          <div class="hc-row">
+            <span class="hc-label" data-fi="Ajankohta"            data-en="Date">Ajankohta</span>
+            <span class="hc-val"   data-fi="Ma 18.8. klo 10:00"   data-en="Mon 18.8. at 10:00">Ma 18.8. klo 10:00</span>
+          </div>
+          <div class="hc-divider"></div>
+          <div class="hc-price-row">
+            <span class="hc-price-label" data-fi="Tarjoushinta" data-en="Quote price">Tarjoushinta</span>
+            <span class="hc-price">39 €<small>/h</small></span>
+          </div>
+        </div>
+
+        <button class="hc-cta" tabindex="-1"
+                data-fi="Sovi aika →" data-en="Book a time →">Sovi aika →</button>
+      </div>
+
+      <div class="hero-chip chip-a"
+           data-fi="⭐ 4.9/5 · 56 arvostelua"
+           data-en="⭐ 4.9/5 · 56 reviews">⭐ 4.9/5 · 56 arvostelua</div>
+      <div class="hero-chip chip-b"
+           data-fi="✅ Tyytyväisyystakuu"
+           data-en="✅ Satisfaction guarantee">✅ Tyytyväisyystakuu</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     STAT BAND — Dark, count-up numbers
+     ============================================================ -->
+<section class="stats-band section-dark" aria-label="Avainluvut">
+  <div class="container stats-grid">
+
+    <div class="stat-item reveal">
+      <div class="stat-num" data-target="56" data-suffix="">56</div>
+      <div class="stat-lbl" data-fi="Google-arvostelua" data-en="Google reviews">Google-arvostelua</div>
+    </div>
+
+    <div class="stat-item reveal" style="--delay:.1s">
+      <div class="stat-num" data-target="4.9" data-decimals="1" data-suffix="★">4.9★</div>
+      <div class="stat-lbl" data-fi="Keskiarvo" data-en="Average rating">Keskiarvo</div>
+    </div>
+
+    <div class="stat-item reveal" style="--delay:.2s">
+      <div class="stat-num">24h</div>
+      <div class="stat-lbl" data-fi="Vastausaika" data-en="Response time">Vastausaika</div>
+    </div>
+
+    <div class="stat-item reveal" style="--delay:.3s">
+      <div class="stat-num" data-target="10" data-suffix="+">10+</div>
+      <div class="stat-lbl" data-fi="Palveltua kaupunkia" data-en="Cities served">Palveltua kaupunkia</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SERVICES — Light, 7 glass cards
+     ============================================================ -->
+<section class="section services-section" id="palvelut">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-pill"
+            data-fi="Palvelut" data-en="Services">Palvelut</span>
+      <h2 data-fi="Mitä voimme tehdä puolestasi?"
+          data-en="What can we do for you?">Mitä voimme tehdä puolestasi?</h2>
+      <p class="section-sub"
+         data-fi="Räätälöimme jokaisen siivouspalvelun tarpeidesi mukaan."
+         data-en="We tailor every cleaning service to your specific needs.">Räätälöimme jokaisen siivouspalvelun tarpeidesi mukaan.</p>
+    </div>
+
+    <!-- ── GROUP 1: Kotitalouksille ─────────────────────────── -->
+    <div class="svc-group">
+      <div class="svc-group-header reveal">
+        <span class="svc-group-pill">
+          <svg viewBox="0 0 20 20" fill="none" width="14" height="14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8.5L10 3l7.5 5.5V18a1 1 0 01-1 1H3.5a1 1 0 01-1-1V8.5z"/><path d="M7.5 19v-6h5v6"/></svg>
+          <span data-fi="Kotitalouksille" data-en="For households">Kotitalouksille</span>
+        </span>
+      </div>
+      <div class="services-grid">
+
+        <article class="svc-card reveal" style="--delay:0s">
+          <div class="svc-icon">
+            <svg viewBox="0 0 32 32" fill="none" width="26" height="26" aria-hidden="true"><path d="M4 14L16 4l12 10v14a2 2 0 01-2 2H6a2 2 0 01-2-2V14z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 28V20h8v8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 data-fi="Kotisiivous" data-en="Home cleaning">Kotisiivous</h3>
+          <p  data-fi="Säännöllinen tai kertasiivous. Sama tuttu siivooja joka kerta."
+              data-en="Regular or one-time cleaning. The same familiar cleaner every time.">Säännöllinen tai kertasiivous. Sama tuttu siivooja joka kerta.</p>
+          <div class="svc-foot">
+            <span class="svc-price" data-fi="alk. 39 €/h" data-en="from €39/h">alk. 39 €/h</span>
+            <a href="#yhteystiedot" class="svc-link"
+               data-fi="Pyydä tarjous →" data-en="Get a quote →">Pyydä tarjous →</a>
+          </div>
+        </article>
+
+        <article class="svc-card reveal" style="--delay:.07s">
+          <div class="svc-icon">
+            <svg viewBox="0 0 32 32" fill="none" width="26" height="26" aria-hidden="true"><rect x="2" y="16" width="28" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 16v-5a8 8 0 0116 0v5" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="29" r="1.5" fill="currentColor"/><circle cx="23" cy="29" r="1.5" fill="currentColor"/></svg>
+          </div>
+          <h3 data-fi="Muuttosiivous" data-en="Move-in/out cleaning">Muuttosiivous</h3>
+          <p  data-fi="Perusteellinen siivous muuton yhteydessä. Tyytyväisyystakuu."
+              data-en="Thorough cleaning during your move. Satisfaction guarantee.">Perusteellinen siivous muuton yhteydessä. Tyytyväisyystakuu.</p>
+          <div class="svc-foot">
+            <span class="svc-price" data-fi="alk. 42 €/h" data-en="from €42/h">alk. 42 €/h</span>
+            <a href="#yhteystiedot" class="svc-link"
+               data-fi="Pyydä tarjous →" data-en="Get a quote →">Pyydä tarjous →</a>
+          </div>
+        </article>
+
+        <article class="svc-card reveal" style="--delay:.14s">
+          <div class="svc-icon">
+            <svg viewBox="0 0 32 32" fill="none" width="26" height="26" aria-hidden="true"><rect x="4" y="4" width="24" height="24" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 16h24M16 4v24" stroke="currentColor" stroke-width="2"/><path d="M7 7l3 3M7 25l3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 data-fi="Ikkunanpesu" data-en="Window cleaning">Ikkunanpesu</h3>
+          <p  data-fi="Kirkkaat ikkunat tuovat valoa ja iloa kotiin."
+              data-en="Sparkling windows bring light and joy to your home.">Kirkkaat ikkunat tuovat valoa ja iloa kotiin.</p>
+          <div class="svc-foot">
+            <span class="svc-price" data-fi="alk. 39 €/h" data-en="from €39/h">alk. 39 €/h</span>
+            <a href="#yhteystiedot" class="svc-link"
+               data-fi="Pyydä tarjous →" data-en="Get a quote →">Pyydä tarjous →</a>
+          </div>
+        </article>
+
+        <article class="svc-card reveal" style="--delay:.21s">
+          <div class="svc-icon">
+            <svg viewBox="0 0 32 32" fill="none" width="26" height="26" aria-hidden="true"><path d="M6 26l4-14h12l4 14H6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 26h28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 12V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M13 9l3-3 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 data-fi="Suursiivous" data-en="Deep cleaning">Suursiivous</h3>
+          <p  data-fi="Perusteellinen suursiivous joka nurkkaan. Ihanteellinen kevätsiivoukseen."
+              data-en="Thorough deep cleaning in every corner. Perfect for spring cleaning.">Perusteellinen suursiivous joka nurkkaan. Ihanteellinen kevätsiivoukseen.</p>
+          <div class="svc-foot">
+            <span class="svc-price" data-fi="alk. 40 €/h" data-en="from €40/h">alk. 40 €/h</span>
+            <a href="#yhteystiedot" class="svc-link"
+               data-fi="Pyydä tarjous →" data-en="Get a quote →">Pyydä tarjous →</a>
+          </div>
+        </article>
+
+        <article class="svc-card reveal" style="--delay:.28s">
+          <div class="svc-icon">
+            <svg viewBox="0 0 32 32" fill="none" width="26" height="26" aria-hidden="true"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/><path d="M16 9v7l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 6l1.5 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M22 6l-1.5 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 data-fi="Erikoissiivous" data-en="Specialty cleaning">Erikoissiivous</h3>
+          <p  data-fi="Sauna, parveke tai erikoiskohteet. Räätälöity ratkaisu."
+              data-en="Sauna, balcony or special locations. A tailored solution.">Sauna, parveke tai erikoiskohteet. Räätälöity ratkaisu.</p>
+          <div class="svc-foot">
+            <span class="svc-price svc-custom" data-fi="Räätälöity" data-en="Custom">Räätälöity</span>
+            <a href="#yhteystiedot" class="svc-link"
+               data-fi="Pyydä tarjous →" data-en="Get a quote →">Pyydä tarjous →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ── Group divider ──────────────────────────────────────── -->
+    <div class="svc-group-divider" aria-hidden="true"></div>
+
+    <!-- ── GROUP 2: Yrityksille ──────────────────────────────── -->
+    <div class="svc-group svc-group--business">
+      <div class="svc-group-header reveal">
+        <span class="svc-group-pill svc-group-pill--business">
+          <svg viewBox="0 0 20 20" fill="none" width="14" height="14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="16" height="11" rx="1.5"/><path d="M7 7V5a2 2 0 012-2h2a2 2 0 012 2v2"/><line x1="2" y1="12" x2="18" y2="12"/></svg>
+          <span data-fi="Yrityksille" data-en="For businesses">Yrityksille</span>
+        </span>
+      </div>
+      <div class="services-grid services-grid--business">
+
+        <article class="svc-card reveal" style="--delay:0s">
+          <div class="svc-icon">
+            <svg viewBox="0 0 32 32" fill="none" width="26" height="26" aria-hidden="true"><rect x="3" y="6" width="26" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 12h26" stroke="currentColor" stroke-width="2"/><rect x="8" y="17" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="19" y="17" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 data-fi="Toimistosiivous" data-en="Office cleaning">Toimistosiivous</h3>
+          <p  data-fi="Puhdas toimisto lisää viihtyvyyttä ja tuottavuutta."
+              data-en="A clean office boosts comfort and productivity.">Puhdas toimisto lisää viihtyvyyttä ja tuottavuutta.</p>
+          <div class="svc-foot">
+            <span class="svc-price svc-custom" data-fi="Räätälöity" data-en="Custom">Räätälöity</span>
+            <a href="#yhteystiedot" class="svc-link"
+               data-fi="Pyydä tarjous →" data-en="Get a quote →">Pyydä tarjous →</a>
+          </div>
+        </article>
+
+        <article class="svc-card reveal" style="--delay:.07s">
+          <div class="svc-icon">
+            <svg viewBox="0 0 32 32" fill="none" width="26" height="26" aria-hidden="true"><path d="M4 28V20h8v-8h8v-8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 28h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 data-fi="Porrassiivous" data-en="Stairwell cleaning">Porrassiivous</h3>
+          <p  data-fi="Säännöllinen porrassiivous taloyhtiöille sovitusti."
+              data-en="Regular stairwell cleaning for housing companies on an agreed schedule.">Säännöllinen porrassiivous taloyhtiöille sovitusti.</p>
+          <div class="svc-foot">
+            <span class="svc-price svc-custom" data-fi="Räätälöity" data-en="Custom">Räätälöity</span>
+            <a href="#yhteystiedot" class="svc-link"
+               data-fi="Pyydä tarjous →" data-en="Get a quote →">Pyydä tarjous →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     HOW IT WORKS — Light alt, numbered timeline
+     ============================================================ -->
+<section class="section how-section section-alt" id="nain-toimii">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-pill"
+            data-fi="Prosessi" data-en="Process">Prosessi</span>
+      <h2 data-fi="Siivous helposti, neljässä vaiheessa"
+          data-en="Cleaning made easy in four steps">Siivous helposti, neljässä vaiheessa</h2>
+    </div>
+    <div class="steps-row">
+
+      <div class="step reveal" style="--delay:0s">
+        <div class="step-top">
+          <div class="step-num">1</div>
+          <div class="step-connector"></div>
+        </div>
+        <h3 data-fi="Pyydä tarjous"   data-en="Request a quote">Pyydä tarjous</h3>
+        <p  data-fi="Jätä postinumero ja puhelinnumero. Teemme tarjouksen saman päivän aikana."
+            data-en="Leave your postal code and phone number. We'll have a quote ready the same day.">Jätä postinumero ja puhelinnumero. Teemme tarjouksen saman päivän aikana.</p>
+      </div>
+
+      <div class="step reveal" style="--delay:.1s">
+        <div class="step-top">
+          <div class="step-num">2</div>
+          <div class="step-connector"></div>
+        </div>
+        <h3 data-fi="Sovitaan ajankohta" data-en="Schedule a time">Sovitaan ajankohta</h3>
+        <p  data-fi="Otamme yhteyttä ja sovitaan sinulle sopiva ajankohta."
+            data-en="We'll be in touch to agree on a time that works for you.">Otamme yhteyttä ja sovitaan sinulle sopiva ajankohta.</p>
+      </div>
+
+      <div class="step reveal" style="--delay:.2s">
+        <div class="step-top">
+          <div class="step-num">3</div>
+          <div class="step-connector"></div>
+        </div>
+        <h3 data-fi="Ammattilaiset hoitavat" data-en="Professionals take care of it">Ammattilaiset hoitavat</h3>
+        <p  data-fi="Siivoojat tulevat sovittuna aikana. Ei tarvitse olla paikalla."
+            data-en="Cleaners arrive at the agreed time. No need for you to be home.">Siivoojat tulevat sovittuna aikana. Ei tarvitse olla paikalla.</p>
+      </div>
+
+      <div class="step reveal" style="--delay:.3s">
+        <div class="step-top">
+          <div class="step-num">4</div>
+        </div>
+        <h3 data-fi="Nauti puhtaasta kodista" data-en="Enjoy your clean home">Nauti puhtaasta kodista</h3>
+        <p  data-fi="Jos olet pettynyt lopputulokseen, korjaamme sen veloituksetta."
+            data-en="If you're not happy with the result, we'll come back and fix it free of charge.">Jos olet pettynyt lopputulokseen, korjaamme sen veloituksetta.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     WHY CLEAVA — Dark, glowing guarantee cards
+     ============================================================ -->
+<section class="section why-section section-dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-pill section-pill--light"
+            data-fi="Takuut" data-en="Guarantees">Takuut</span>
+      <h2 class="gradient-text"
+          data-fi="Miksi Cleava?" data-en="Why Cleava?">Miksi Cleava?</h2>
+      <p class="section-sub muted-light"
+         data-fi="Luottamus on kaiken perusta — jokaisessa siivouskerrassa."
+         data-en="Trust is the foundation of everything — with every clean.">Luottamus on kaiken perusta — jokaisessa siivouskerrassa.</p>
+    </div>
+    <div class="why-grid">
+
+      <div class="why-card reveal" style="--delay:0s">
+        <div class="why-icon">
+          <svg viewBox="0 0 32 32" fill="none" width="26" height="26" aria-hidden="true"><path d="M16 2l3.09 6.26L26 9.27l-5 4.87 1.18 6.86L16 18l-6.18 3-1.18-6.86L3 9.27l6.91-1.01L16 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 data-fi="100% Tyytyväisyystakuu" data-en="100% Satisfaction Guarantee">100% Tyytyväisyystakuu</h3>
+        <p  data-fi="Jos lopputulos ei miellytä, palaamme korjaamaan veloituksetta."
+            data-en="If the result doesn't meet your expectations, we'll return and fix it free of charge.">Jos lopputulos ei miellytä, palaamme korjaamaan veloituksetta.</p>
+      </div>
+
+      <div class="why-card reveal" style="--delay:.1s">
+        <div class="why-icon">
+          <svg viewBox="0 0 32 32" fill="none" width="26" height="26" aria-hidden="true"><path d="M16 2C9.37 2 4 7.37 4 14c0 4.42 2.3 8.3 5.75 10.56L16 30l6.25-5.44A12 12 0 0028 14C28 7.37 22.63 2 16 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11 14l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 data-fi="Taustatarkistetut ammattilaiset" data-en="Background-checked professionals">Taustatarkistetut ammattilaiset</h3>
+        <p  data-fi="Kaikki siivoojamme on taustatarkistettu ja koulutettu."
+            data-en="All our cleaners are background-checked and professionally trained.">Kaikki siivoojamme on taustatarkistettu ja koulutettu.</p>
+      </div>
+
+      <div class="why-card reveal" style="--delay:.2s">
+        <div class="why-icon">
+          <svg viewBox="0 0 32 32" fill="none" width="26" height="26" aria-hidden="true"><path d="M16 3l12 5v8c0 7-5.5 11.5-12 13C9.5 27.5 4 23 4 16V8l12-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11 16l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 data-fi="Täysin vakuutettu palvelu" data-en="Fully insured service">Täysin vakuutettu palvelu</h3>
+        <p  data-fi="Jokainen siivous on vakuutettu. Jos jotain tapahtuu, me hoidamme sen."
+            data-en="Every clean is fully insured. If anything happens, we handle it.">Jokainen siivous on vakuutettu. Jos jotain tapahtuu, me hoidamme sen.</p>
+      </div>
+
+      <div class="why-card reveal" style="--delay:.3s">
+        <div class="why-icon">
+          <svg viewBox="0 0 32 32" fill="none" width="26" height="26" aria-hidden="true"><path d="M16 4c-2 4-8 6-8 12a8 8 0 0016 0C24 10 18 8 16 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 20c0-2.5 2-5 4-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 data-fi="Ekologiset puhdistusaineet" data-en="Eco-friendly cleaning products">Ekologiset puhdistusaineet</h3>
+        <p  data-fi="Hajusteettomia ja ympäristöystävällisiä aineita. Turvallisia perheille ja lemmikkikodeille."
+            data-en="Fragrance-free and eco-friendly products. Safe for families and pets.">Hajusteettomia ja ympäristöystävällisiä aineita. Turvallisia perheille ja lemmikkikodeille.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MARQUEE — city names are the same in both languages
+     ============================================================ -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-fade marquee-fade--left"></div>
+  <div class="marquee-track">
+    <div class="marquee-inner">
+      <span>Helsinki</span><span class="dot">·</span>
+      <span>Espoo</span><span class="dot">·</span>
+      <span>Vantaa</span><span class="dot">·</span>
+      <span>Kauniainen</span><span class="dot">·</span>
+      <span>Kirkkonummi</span><span class="dot">·</span>
+      <span>Kerava</span><span class="dot">·</span>
+      <span>Järvenpää</span><span class="dot">·</span>
+      <span>Tuusula</span><span class="dot">·</span>
+      <span>Sipoo</span><span class="dot">·</span>
+      <span>Nurmijärvi</span><span class="dot">·</span>
+      <span>Helsinki</span><span class="dot">·</span>
+      <span>Espoo</span><span class="dot">·</span>
+      <span>Vantaa</span><span class="dot">·</span>
+      <span>Kauniainen</span><span class="dot">·</span>
+      <span>Kirkkonummi</span><span class="dot">·</span>
+      <span>Kerava</span><span class="dot">·</span>
+      <span>Järvenpää</span><span class="dot">·</span>
+      <span>Tuusula</span><span class="dot">·</span>
+      <span>Sipoo</span><span class="dot">·</span>
+      <span>Nurmijärvi</span><span class="dot">·</span>
+    </div>
+  </div>
+  <div class="marquee-fade marquee-fade--right"></div>
+</div>
+
+
+<!-- ============================================================
+     PRICING — Light, clean cards
+     ============================================================ -->
+<section class="section pricing-section" id="hinnasto">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-pill"
+            data-fi="Hinnasto" data-en="Pricing">Hinnasto</span>
+      <h2 data-fi="Selkeä hinta"
+          data-en="Clear pricing">Selkeä hinta</h2>
+      <p class="section-sub"
+         data-fi="Ei piilokuluia — tiedät aina mitä maksat."
+         data-en="No hidden fees — you always know what you pay.">Ei piilokuluia — tiedät aina mitä maksat.</p>
+    </div>
+    <div class="pricing-grid reveal">
+
+      <div class="price-card">
+        <div class="pc-name" data-fi="Kotisiivous"    data-en="Home cleaning">Kotisiivous</div>
+        <div class="pc-price">39 <span>€/h</span></div>
+        <a href="#yhteystiedot" class="btn btn-outline-teal btn-sm"
+           data-fi="Varaa nyt" data-en="Book now">Varaa nyt</a>
+      </div>
+
+      <div class="price-card">
+        <div class="pc-name" data-fi="Ikkunanpesu"   data-en="Window cleaning">Ikkunanpesu</div>
+        <div class="pc-price">39 <span>€/h</span></div>
+        <a href="#yhteystiedot" class="btn btn-outline-teal btn-sm"
+           data-fi="Varaa nyt" data-en="Book now">Varaa nyt</a>
+      </div>
+
+      <div class="price-card">
+        <div class="pc-name" data-fi="Suursiivous"   data-en="Deep cleaning">Suursiivous</div>
+        <div class="pc-price">40 <span>€/h</span></div>
+        <a href="#yhteystiedot" class="btn btn-outline-teal btn-sm"
+           data-fi="Varaa nyt" data-en="Book now">Varaa nyt</a>
+      </div>
+
+      <div class="price-card price-card--featured">
+        <div class="pc-badge"  data-fi="Suosituin"   data-en="Most popular">Suosituin</div>
+        <div class="pc-name"  data-fi="Muuttosiivous" data-en="Move-in/out cleaning">Muuttosiivous</div>
+        <div class="pc-price">42 <span>€/h</span></div>
+        <a href="#yhteystiedot" class="btn btn-gradient btn-sm"
+           data-fi="Varaa nyt" data-en="Book now">Varaa nyt</a>
+      </div>
+
+      <div class="price-card price-card--soft">
+        <div class="pc-name"   data-fi="Toimistosiivous" data-en="Office cleaning">Toimistosiivous</div>
+        <div class="pc-custom" data-fi="Räätälöity"      data-en="Custom">Räätälöity</div>
+        <a href="#yhteystiedot" class="btn btn-outline-teal btn-sm"
+           data-fi="Pyydä tarjous" data-en="Request a quote">Pyydä tarjous</a>
+      </div>
+
+      <div class="price-card price-card--soft">
+        <div class="pc-name"   data-fi="Erikoissiivous" data-en="Specialty cleaning">Erikoissiivous</div>
+        <div class="pc-custom" data-fi="Räätälöity"     data-en="Custom">Räätälöity</div>
+        <a href="#yhteystiedot" class="btn btn-outline-teal btn-sm"
+           data-fi="Pyydä tarjous" data-en="Request a quote">Pyydä tarjous</a>
+      </div>
+
+      <div class="price-card price-card--soft">
+        <div class="pc-name"   data-fi="Porrassiivous" data-en="Stairwell cleaning">Porrassiivous</div>
+        <div class="pc-custom" data-fi="Räätälöity"    data-en="Custom">Räätälöity</div>
+        <a href="#yhteystiedot" class="btn btn-outline-teal btn-sm"
+           data-fi="Pyydä tarjous" data-en="Request a quote">Pyydä tarjous</a>
+      </div>
+
+    </div>
+    <!-- Pricing note split into spans to avoid HTML in data attributes -->
+    <p class="pricing-note reveal"><span
+      data-fi="Kaikki hinnat sisältävät ALV:n. Kotisiivouspalveluista voit hakea "
+      data-en="All prices include VAT. Home cleaning services are eligible for a ">Kaikki hinnat sisältävät ALV:n. Kotisiivouspalveluista voit hakea </span><strong
+      data-fi="kotitalousvähennystä"
+      data-en="household tax deduction">kotitalousvähennystä</strong><span
+      data-fi=" (40 % työn osuudesta, enintään 2 100 € / henkilö / vuosi)."
+      data-en=" in Finland (40% of labour costs, up to €2,100 per person per year)."> (40 % työn osuudesta, enintään 2 100 € / henkilö / vuosi).</span></p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TESTIMONIALS — Light alt, glass quote cards
+     ============================================================ -->
+<section class="section testimonials-section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-pill"
+            data-fi="Asiakasarvostelut" data-en="Customer reviews">Asiakasarvostelut</span>
+      <h2 data-fi="Mitä asiakkaamme sanovat"
+          data-en="What our customers say">Mitä asiakkaamme sanovat</h2>
+      <!-- TODO: Replace placeholder quotes below with real Google reviews from the client -->
+      <p class="section-sub"
+         data-fi="★★★★★ 4.9 · 56 Google-arvostelua"
+         data-en="★★★★★ 4.9 · 56 Google reviews">★★★★★ 4.9 · 56 Google-arvostelua</p>
+    </div>
+    <div class="testi-grid">
+
+      <div class="testi-card reveal" style="--delay:0s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote"
+           data-fi="&ldquo;Erinomainen palvelu alusta loppuun. Siivooja oli täsmällinen ja ammattimainen — koti loisti puhtautta. Ehdottomasti tilaan uudelleen!&rdquo;"
+           data-en="&ldquo;Excellent service from start to finish. The cleaner was punctual and professional — the home was spotless. Definitely booking again!&rdquo;">"Erinomainen palvelu alusta loppuun. Siivooja oli täsmällinen ja ammattimainen — koti loisti puhtautta. Ehdottomasti tilaan uudelleen!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MK</div>
+          <div>
+            <div class="testi-name">Maria K.</div>
+            <div class="testi-city">Helsinki</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal" style="--delay:.1s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote"
+           data-fi="&ldquo;Muuttosiivoukseen pyydetty Cleava teki täydellisen työn. Asunto oli kuin uusi — vuokranantajakin oli tyytyväinen. Suosittelemme lämpimästi.&rdquo;"
+           data-en="&ldquo;Cleava did a perfect job on our move-out clean. The apartment looked brand new — even the landlord was impressed. Highly recommended.&rdquo;">"Muuttosiivoukseen pyydetty Cleava teki täydellisen työn. Asunto oli kuin uusi — vuokranantajakin oli tyytyväinen. Suosittelemme lämpimästi."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">JL</div>
+          <div>
+            <div class="testi-name">Janne L.</div>
+            <div class="testi-city">Espoo</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal" style="--delay:.2s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote"
+           data-fi="&ldquo;Kotitalousvähennys hyödynnetty, hinta-laatu-suhde on loistava. Sama siivooja joka kerta — helppo ja luotettava arjen apu.&rdquo;"
+           data-en="&ldquo;We use the household tax deduction and the value for money is excellent. Same cleaner every time — easy, reliable everyday help.&rdquo;">"Kotitalousvähennys hyödynnetty, hinta-laatu-suhde on loistava. Sama siivooja joka kerta — helppo ja luotettava arjen apu."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SP</div>
+          <div>
+            <div class="testi-name">Sanna P.</div>
+            <div class="testi-city">Vantaa</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FAQ — Light, animated accordion
+     ============================================================ -->
+<section class="section faq-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-pill"
+            data-fi="UKK" data-en="FAQ">UKK</span>
+      <h2 data-fi="Usein kysytyt kysymykset"
+          data-en="Frequently asked questions">Usein kysytyt kysymykset</h2>
+    </div>
+    <div class="faq-list reveal" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="fa1">
+          <span data-fi="Pitääkö minun olla kotona siivouksen aikana?"
+                data-en="Do I need to be home during the cleaning?">Pitääkö minun olla kotona siivouksen aikana?</span>
+          <span class="faq-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" id="fa1" hidden>
+          <p data-fi="Ei tarvitse. Voit luovuttaa avaimen tai koodin siivoojalle. Siivoojamme ovat taustatarkistettuja ja vakuutettuja."
+             data-en="No. You can leave a key or access code for the cleaner. All our cleaners are background-checked and insured.">Ei tarvitse. Voit luovuttaa avaimen tai koodin siivoojalle. Siivoojamme ovat taustatarkistettuja ja vakuutettuja.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="fa2">
+          <span data-fi="Voinko pyytää samaa siivoojaa joka kerta?"
+                data-en="Can I request the same cleaner every time?">Voinko pyytää samaa siivoojaa joka kerta?</span>
+          <span class="faq-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" id="fa2" hidden>
+          <p data-fi="Kyllä, pyrimme lähettämään saman tutun siivoojan joka kerralla, jos mahdollista."
+             data-en="Yes, we aim to send the same familiar cleaner each visit whenever possible.">Kyllä, pyrimme lähettämään saman tutun siivoojan joka kerralla, jos mahdollista.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="fa3">
+          <span data-fi="Miten kotitalousvähennys toimii?"
+                data-en="How does the household tax deduction work?">Miten kotitalousvähennys toimii?</span>
+          <span class="faq-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" id="fa3" hidden>
+          <p data-fi="Vähennys on 40 % työn osuudesta, enintään 2 100 € henkilöä kohden vuodessa. Haetaan OmaVero-palvelussa."
+             data-en="The deduction is 40% of the labour cost, up to €2,100 per person per year. Apply through the MyTax (OmaVero) service.">Vähennys on 40 % työn osuudesta, enintään 2 100 € henkilöä kohden vuodessa. Haetaan OmaVero-palvelussa.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="fa4">
+          <span data-fi="Missä Cleava toimii?"
+                data-en="Where does Cleava operate?">Missä Cleava toimii?</span>
+          <span class="faq-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" id="fa4" hidden>
+          <p data-fi="Pääkaupunkiseudulla: Helsinki, Espoo, Vantaa ja Kauniainen."
+             data-en="In the Helsinki metropolitan area: Helsinki, Espoo, Vantaa and Kauniainen.">Pääkaupunkiseudulla: Helsinki, Espoo, Vantaa ja Kauniainen.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT / CTA — Dark, gradient glow
+     ============================================================ -->
+<section class="section contact-section section-dark" id="yhteystiedot">
+  <div class="contact-glow" aria-hidden="true"></div>
+  <div class="container contact-grid">
+
+    <div class="cf-wrap reveal">
+      <span class="section-pill section-pill--light"
+            data-fi="Ota yhteyttä" data-en="Get in touch">Ota yhteyttä</span>
+      <h2 class="gradient-text"
+          data-fi="Pyydä ilmainen tarjous" data-en="Request a free quote">Pyydä ilmainen tarjous</h2>
+      <p class="section-sub muted-light" style="margin-bottom:32px"
+         data-fi="Vastaamme saman päivän aikana."
+         data-en="We respond the same day.">Vastaamme saman päivän aikana.</p>
+
+      <!-- TODO: Add action="https://formspree.io/f/YOUR_ID" method="POST" when backend is ready -->
+      <form class="contact-form" id="contact-form" novalidate aria-label="Tarjouspyyntölomake">
+        <!-- Formspree helpers -->
+        <input type="hidden" name="_subject" value="Uusi tarjouspyyntö – Cleava" />
+        <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="cf-group">
+          <label for="cf-palvelu" data-fi="Palvelu" data-en="Service">Palvelu</label>
+          <select id="cf-palvelu" name="palvelu" required>
+            <option value="" disabled selected data-fi="Valitse palvelu"    data-en="Choose a service">Valitse palvelu</option>
+            <option value="kotisiivous"     data-fi="Kotisiivous"           data-en="Home cleaning">Kotisiivous</option>
+            <option value="muuttosiivous"   data-fi="Muuttosiivous"         data-en="Move-in/out cleaning">Muuttosiivous</option>
+            <option value="toimistosiivous" data-fi="Toimistosiivous"       data-en="Office cleaning">Toimistosiivous</option>
+            <option value="ikkunanpesu"     data-fi="Ikkunanpesu"           data-en="Window cleaning">Ikkunanpesu</option>
+            <option value="suursiivous"     data-fi="Suursiivous"           data-en="Deep cleaning">Suursiivous</option>
+            <option value="erikoissiivous"  data-fi="Erikoissiivous"        data-en="Specialty cleaning">Erikoissiivous</option>
+            <option value="porrassiivous"   data-fi="Porrassiivous"         data-en="Stairwell cleaning">Porrassiivous</option>
+          </select>
+        </div>
+        <div class="cf-row">
+          <div class="cf-group">
+            <label for="cf-posti" data-fi="Postinumero" data-en="Postal code">Postinumero</label>
+            <input type="text" id="cf-posti" name="postinumero" placeholder="00100"
+                   maxlength="5" inputmode="numeric" required />
+          </div>
+          <div class="cf-group">
+            <label for="cf-puh" data-fi="Puhelin" data-en="Phone">Puhelin</label>
+            <input type="tel" id="cf-puh" name="puhelin" placeholder="045 187 8083" required />
+          </div>
+        </div>
+        <div class="cf-group">
+          <label for="cf-email" data-fi="Sähköposti" data-en="Email">Sähköposti</label>
+          <input type="email" id="cf-email" name="email"
+                 placeholder="sinun@email.fi"
+                 data-fi-placeholder="sinun@email.fi"
+                 data-en-placeholder="your@email.com"
+                 required />
+        </div>
+        <div class="cf-group">
+          <label for="cf-viesti" data-fi="Viesti" data-en="Message">Viesti</label>
+          <textarea id="cf-viesti" name="viesti" rows="5"
+                    placeholder="Kerro tarpeistasi — esim. asunnon koko, toivottu ajankohta tai erityistoiveet."
+                    data-fi-placeholder="Kerro tarpeistasi — esim. asunnon koko, toivottu ajankohta tai erityistoiveet."
+                    data-en-placeholder="Tell us about your needs — e.g. size of the home, preferred timing, or special requests."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gradient btn-lg btn-full cf-submit">
+          <span data-fi="Pyydä tarjous nyt" data-en="Request a quote now">Pyydä tarjous nyt</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="cf-note"
+           data-fi="Ei sitoutumista. Ilmainen tarjous. Vastaamme 24h sisällä."
+           data-en="No commitment. Free quote. We respond within 24 hours.">Ei sitoutumista. Ilmainen tarjous. Vastaamme 24h sisällä.</p>
+      </form>
+    </div>
+
+    <div class="cd-wrap reveal" style="--delay:.15s">
+      <h3 data-fi="Ota yhteyttä suoraan" data-en="Contact us directly">Ota yhteyttä suoraan</h3>
+      <div class="cd-item">
+        <div class="cd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.66A2 2 0 012 .81h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div>
+          <div class="cd-label" data-fi="Puhelin"     data-en="Phone">Puhelin</div>
+          <a href="tel:0451878083" class="cd-val">045 187 8083</a>
+        </div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+        <div>
+          <div class="cd-label" data-fi="Sähköposti"  data-en="Email">Sähköposti</div>
+          <a href="mailto:info@cleava.fi" class="cd-val">info@cleava.fi</a>
+        </div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div>
+          <div class="cd-label" data-fi="Aukioloajat"  data-en="Opening hours">Aukioloajat</div>
+          <div class="cd-val"   data-fi="Ma–Pe 8–18"   data-en="Mon–Fri 8–18">Ma–Pe 8–18</div>
+          <div class="cd-val"   data-fi="La–Su 12–16"  data-en="Sat–Sun 12–16">La–Su 12–16</div>
+        </div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <div class="cd-label" data-fi="Palvelualue"  data-en="Service area">Palvelualue</div>
+          <div class="cd-val">Helsinki · Espoo · Vantaa · Kauniainen</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER — Dark
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+      <!-- TODO: Replace with <img> logo -->
+      <a href="#" class="logo footer-logo" aria-label="Cleava etusivulle">
+        <span class="logo-mark">C</span>
+        <span class="logo-word">Cleava</span>
+      </a>
+      <p data-fi="Luotettavia siivouspalveluja pääkaupunkiseudulla."
+         data-en="Reliable cleaning services in the Helsinki metropolitan area.">Luotettavia siivouspalveluja pääkaupunkiseudulla.</p>
+      <div class="footer-social" aria-label="Sosiaalinen media">
+        <!-- TODO: Replace # with actual profile URLs -->
+        <a href="#" class="social-btn" aria-label="Instagram" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="18" height="18" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <a href="#" class="social-btn" aria-label="Facebook" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="18" height="18" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          Facebook
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-fi="Palvelut"      data-en="Services">Palvelut</h4>
+      <ul>
+        <li><a href="#palvelut" data-fi="Kotisiivous"    data-en="Home cleaning">Kotisiivous</a></li>
+        <li><a href="#palvelut" data-fi="Muuttosiivous"  data-en="Move-in/out cleaning">Muuttosiivous</a></li>
+        <li><a href="#palvelut" data-fi="Toimistosiivous" data-en="Office cleaning">Toimistosiivous</a></li>
+        <li><a href="#palvelut" data-fi="Ikkunanpesu"    data-en="Window cleaning">Ikkunanpesu</a></li>
+        <li><a href="#palvelut" data-fi="Suursiivous"    data-en="Deep cleaning">Suursiivous</a></li>
+        <li><a href="#palvelut" data-fi="Erikoissiivous" data-en="Specialty cleaning">Erikoissiivous</a></li>
+        <li><a href="#palvelut" data-fi="Porrassiivous"  data-en="Stairwell cleaning">Porrassiivous</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-fi="Yhteystiedot"  data-en="Contact">Yhteystiedot</h4>
+      <ul>
+        <li><a href="tel:0451878083">045 187 8083</a></li>
+        <li><a href="mailto:info@cleava.fi">info@cleava.fi</a></li>
+        <li data-fi="Ma–Pe 8–18, La–Su 12–16"
+            data-en="Mon–Fri 8–18, Sat–Sun 12–16">Ma–Pe 8–18, La–Su 12–16</li>
+        <li>Helsinki · Espoo · Vantaa · Kauniainen</li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p data-fi="© 2025 Cleava Siivouspalvelut — Mansio Group Oy · Y-tunnus: 3631044-9"
+         data-en="© 2025 Cleava Cleaning Services — Mansio Group Oy · Business ID: 3631044-9">© 2025 Cleava Siivouspalvelut — Mansio Group Oy · Y-tunnus: 3631044-9</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
