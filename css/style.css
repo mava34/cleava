@@ -219,13 +219,15 @@ h3 { font-size: 1.1rem; font-weight: 600; letter-spacing: -.01em; }
   flex-shrink: 0;
 }
 .logo-word {
-  font-size: 1.3rem;
-  color: #fff;
-}
-.logo-img {
-  display: block;
-  width: auto;
-  object-fit: contain;
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  background: linear-gradient(155deg, #BAE6FD 0%, #38BDF8 35%, #0EA5E9 65%, #1D4ED8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 10px rgba(56,189,248,.45));
 }
 
 /* DESKTOP NAV */
@@ -1113,7 +1115,7 @@ a.cd-val:hover { color: var(--mint); }
   padding-block: 72px 56px;
 }
 .footer-brand p { margin-top: 12px; font-size: .9rem; max-width: 240px; line-height: 1.6; }
-.footer-logo .logo-word { color: #fff; }
+.footer-logo .logo-word { -webkit-text-fill-color: transparent; }
 
 .footer-social { display: flex; gap: 10px; margin-top: 22px; }
 .social-btn {
