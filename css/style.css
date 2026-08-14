@@ -222,6 +222,11 @@ h3 { font-size: 1.1rem; font-weight: 600; letter-spacing: -.01em; }
   font-size: 1.3rem;
   color: #fff;
 }
+.logo-img {
+  display: block;
+  width: auto;
+  object-fit: contain;
+}
 
 /* DESKTOP NAV */
 .desktop-nav ul {
