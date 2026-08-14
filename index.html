@@ -576,6 +576,105 @@
 
 
 <!-- ============================================================
+     KOTITALOUSVÄHENNYS LASKIN
+     ============================================================ -->
+<section class="section calculator-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-pill" data-fi="Laskin" data-en="Calculator">Laskin</span>
+      <h2 data-fi="Paljonko säästät kotitalousvähennyksellä?"
+          data-en="How much do you save with the tax deduction?">Paljonko säästät kotitalousvähennyksellä?</h2>
+      <p class="section-sub"
+         data-fi="Syötä siivoustiheys — näet todellisen vuosikustannuksen veroedun jälkeen."
+         data-en="Enter your cleaning frequency — see your real annual cost after the tax benefit.">Syötä siivoustiheys — näet todellisen vuosikustannuksen veroedun jälkeen.</p>
+    </div>
+
+    <div class="calc-card reveal">
+      <div class="calc-body">
+
+        <div class="calc-inputs">
+
+          <div class="calc-field">
+            <div class="calc-field-header">
+              <label for="calc-freq"
+                     data-fi="Käyntejä kuukaudessa"
+                     data-en="Visits per month">Käyntejä kuukaudessa</label>
+              <span class="calc-val-badge" id="calc-freq-display">2</span>
+            </div>
+            <input type="range" id="calc-freq" class="calc-slider"
+                   min="1" max="8" value="2" step="1"
+                   aria-valuemin="1" aria-valuemax="8" aria-valuenow="2" />
+            <div class="calc-range-labels" aria-hidden="true">
+              <span>1</span><span>8</span>
+            </div>
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-header">
+              <label for="calc-hours"
+                     data-fi="Tunteja per käynti"
+                     data-en="Hours per visit">Tunteja per käynti</label>
+              <span class="calc-val-badge" id="calc-hours-display">3</span>
+            </div>
+            <input type="range" id="calc-hours" class="calc-slider"
+                   min="1" max="10" value="3" step="1"
+                   aria-valuemin="1" aria-valuemax="10" aria-valuenow="3" />
+            <div class="calc-range-labels" aria-hidden="true">
+              <span>1</span><span>10</span>
+            </div>
+          </div>
+
+          <div class="calc-field">
+            <label for="calc-rate"
+                   data-fi="Tuntihinta"
+                   data-en="Hourly rate">Tuntihinta</label>
+            <div class="calc-rate-wrap">
+              <span class="calc-rate-prefix" aria-hidden="true">€</span>
+              <input type="number" id="calc-rate" class="calc-input-num"
+                     min="30" max="200" value="39" step="1"
+                     aria-label="Tuntihinta euroina tunnilta" />
+              <span class="calc-rate-suffix" aria-hidden="true">/h</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="calc-results" aria-live="polite" aria-atomic="true">
+          <div class="calc-result-row">
+            <span class="calc-result-label"
+                  data-fi="Vuosikustannus"
+                  data-en="Annual cost">Vuosikustannus</span>
+            <span class="calc-result-val" id="res-total">—</span>
+          </div>
+          <div class="calc-result-row">
+            <span class="calc-result-label"
+                  data-fi="Kotitalousvähennys"
+                  data-en="Tax deduction">Kotitalousvähennys</span>
+            <span class="calc-result-val calc-result-saving" id="res-deduction">—</span>
+          </div>
+          <div class="calc-result-divider"></div>
+          <div class="calc-result-row calc-result-row--featured">
+            <span class="calc-result-label"
+                  data-fi="Todellinen kustannus"
+                  data-en="Your actual cost">Todellinen kustannus</span>
+            <span class="calc-result-val calc-result-val--big" id="res-net">—</span>
+          </div>
+          <div class="calc-cta-row">
+            <a href="#yhteystiedot" class="btn btn-gradient btn-sm"
+               data-fi="Pyydä tarjous →" data-en="Get a quote →">Pyydä tarjous →</a>
+          </div>
+        </div>
+
+      </div>
+      <p class="calc-note"
+         data-fi="Vähennys on 40 % työn osuudesta, enintään 2 100 € / henkilö / vuosi. Omavastuu 100 €. Laskelma on suuntaa-antava."
+         data-en="Deduction is 40% of labour costs, max €2,100 per person per year. Self-contribution €100. This is an estimate.">Vähennys on 40 % työn osuudesta, enintään 2 100 € / henkilö / vuosi. Omavastuu 100 €. Laskelma on suuntaa-antava.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
      TESTIMONIALS — Light alt, glass quote cards
      ============================================================ -->
 <section class="section testimonials-section section-alt">

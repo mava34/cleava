@@ -57,6 +57,9 @@
       btn.classList.toggle('active', isActive);
       btn.setAttribute('aria-pressed', String(isActive));
     });
+
+    // Re-render calculator result labels in new language
+    if (typeof updateCalc === 'function') updateCalc();
   }
 
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
@@ -292,6 +295,63 @@
         })
         .catch(showError);
     });
+  }
+
+
+  /* --------------------------------------------------------
+     KOTITALOUSVÄHENNYS LASKIN
+  -------------------------------------------------------- */
+  var calcFreq  = document.getElementById('calc-freq');
+  var calcHours = document.getElementById('calc-hours');
+  var calcRate  = document.getElementById('calc-rate');
+
+  function updateCalc() {
+    if (!calcFreq || !calcHours || !calcRate) return;
+
+    var freq  = parseInt(calcFreq.value, 10)  || 2;
+    var hours = parseInt(calcHours.value, 10) || 3;
+    var rate  = parseFloat(calcRate.value)    || 39;
+
+    var yearlyTotal = freq * 12 * hours * rate;
+    var deductible  = yearlyTotal * 0.40;
+    var saving      = Math.max(0, Math.min(deductible - 100, 2100));
+    var netCost     = yearlyTotal - saving;
+
+    var fmt = function (n) { return n.toLocaleString('fi-FI', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }); };
+
+    var resTotal     = document.getElementById('res-total');
+    var resDeduction = document.getElementById('res-deduction');
+    var resNet       = document.getElementById('res-net');
+
+    if (resTotal)     resTotal.textContent     = fmt(yearlyTotal);
+    if (resDeduction) resDeduction.textContent = saving > 0 ? '− ' + fmt(saving) : (currentLang === 'fi' ? 'Ei oikeutta' : 'Not eligible');
+    if (resNet)       resNet.textContent       = fmt(netCost);
+
+    // Update ARIA values
+    calcFreq.setAttribute('aria-valuenow',  calcFreq.value);
+    calcHours.setAttribute('aria-valuenow', calcHours.value);
+
+    // Live badge displays
+    var freqBadge  = document.getElementById('calc-freq-display');
+    var hoursBadge = document.getElementById('calc-hours-display');
+    if (freqBadge)  freqBadge.textContent  = calcFreq.value;
+    if (hoursBadge) hoursBadge.textContent = calcHours.value;
+
+    // Tinted track fill via inline background
+    function fillTrack(el, min, max) {
+      var pct = ((parseInt(el.value, 10) - min) / (max - min)) * 100;
+      el.style.background = 'linear-gradient(to right, var(--primary) ' + pct + '%, rgba(255,255,255,.12) ' + pct + '%)';
+    }
+    fillTrack(calcFreq,  1, 8);
+    fillTrack(calcHours, 1, 10);
+  }
+
+  if (calcFreq && calcHours && calcRate) {
+    calcFreq.addEventListener('input',  updateCalc);
+    calcHours.addEventListener('input', updateCalc);
+    calcRate.addEventListener('input',  updateCalc);
+    calcRate.addEventListener('change', updateCalc);
+    updateCalc();
   }
 
 })();
