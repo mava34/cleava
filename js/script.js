@@ -8,6 +8,8 @@
 (function () {
   'use strict';
 
+  emailjs.init("irivADZOE-lea0Qxw");
+
   /* --------------------------------------------------------
      LANGUAGE SWITCHER — in-memory only, no localStorage
   -------------------------------------------------------- */
@@ -228,14 +230,9 @@
 
 
   /* --------------------------------------------------------
-     CONTACT FORM — Formspree backend
-     1. Sign up at https://formspree.io
-     2. Create a new form, set the notification email to info@cleava.fi
-     3. Copy your form ID (the part after /f/ in the endpoint URL)
-     4. Paste it below as the value of FORMSPREE_ID
+     CONTACT FORM — EmailJS
+     Service: service_rk1v7r2 · Template: template_ivpuzsb
   -------------------------------------------------------- */
-  var FORMSPREE_ID = 'YOUR_FORM_ID'; // ← replace this
-
   const form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', function (e) {
@@ -282,14 +279,8 @@
       submit.textContent = msgs[currentLang].sending;
       submit.disabled = true;
 
-      fetch('https://formspree.io/f/' + FORMSPREE_ID, {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(form)
-      })
-      .then(function (res) { return res.json(); })
-      .then(function (data) {
-        if (data.ok) {
+      emailjs.sendForm('service_rk1v7r2', 'template_ivpuzsb', form)
+        .then(function () {
           submit.textContent = msgs[currentLang].sent;
           submit.style.background = 'linear-gradient(135deg,#059669,#34D399)';
           form.reset();
@@ -298,11 +289,8 @@
             submit.style.background = '';
             submit.disabled = false;
           }, 4500);
-        } else {
-          showError();
-        }
-      })
-      .catch(showError);
+        })
+        .catch(showError);
     });
   }
 
