@@ -229,6 +229,12 @@ h3 { font-size: 1.1rem; font-weight: 600; letter-spacing: -.01em; }
   background-clip: text;
   filter: drop-shadow(0 0 10px rgba(56,189,248,.45));
 }
+.logo-img {
+  display: block;
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
 
 /* DESKTOP NAV */
 .desktop-nav ul {
