@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lahjakortti – Cleava</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #F8FAF9;
+      color: #1A2B29;
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    ul { list-style: none; }
+
+    /* ── TOP BAR ── */
+    .order-header {
+      background: #FFFFFF;
+      border-bottom: 1px solid rgba(11,31,28,.08);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-inline: clamp(20px, 5vw, 56px);
+    }
+    .header-logo img { display: block; height: 36px; width: auto; }
+    .back-link {
+      font-size: .875rem;
+      font-weight: 500;
+      color: #4B5D5A;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .15s;
+    }
+    .back-link:hover { color: #0D9488; }
+
+    /* ── MAIN ── */
+    .order-main {
+      padding: 56px 20px 80px;
+    }
+    .order-container {
+      max-width: 680px;
+      margin-inline: auto;
+    }
+
+    /* ── HEADING ── */
+    .order-pill {
+      display: inline-block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #0D9488;
+      margin-bottom: 14px;
+    }
+    .order-intro h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -.025em;
+      line-height: 1.15;
+      color: #1A2B29;
+      margin-bottom: 36px;
+    }
+    .order-intro h1 em {
+      font-style: italic;
+      font-weight: 700;
+      color: #0D9488;
+    }
+
+    /* ── FORM CARD ── */
+    .order-form {
+      background: #FFFFFF;
+      border: 1px solid rgba(11,31,28,.08);
+      border-radius: 20px;
+      padding: clamp(28px, 5vw, 48px);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* ── SELECTED CARD SUMMARY ── */
+    .order-summary {
+      background: #EBF5F4;
+      border: 1px solid rgba(13,148,136,.15);
+      border-radius: 12px;
+      padding: 18px 22px;
+    }
+    .order-summary-label {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #0D9488;
+      margin-bottom: 6px;
+    }
+    .order-summary-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1A2B29;
+    }
+
+    /* ── SECTION LABELS ── */
+    .order-section { display: flex; flex-direction: column; gap: 16px; }
+    .order-section-label {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #4B5D5A;
+      padding-bottom: 4px;
+    }
+
+    /* ── FIELDS ── */
+    .order-field { display: flex; flex-direction: column; gap: 7px; }
+    .order-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .order-field label {
+      font-size: .9rem;
+      font-weight: 500;
+      color: #1A2B29;
+    }
+    .order-field input,
+    .order-field textarea {
+      font-family: 'Inter', sans-serif;
+      font-size: .9375rem;
+      color: #1A2B29;
+      background: #F8FAF9;
+      border: 1.5px solid rgba(11,31,28,.10);
+      border-radius: 50px;
+      padding: 13px 20px;
+      width: 100%;
+      outline: none;
+      transition: border-color .18s, box-shadow .18s;
+      appearance: none;
+    }
+    .order-field textarea {
+      border-radius: 16px;
+      resize: vertical;
+      min-height: 110px;
+    }
+    .order-field input::placeholder,
+    .order-field textarea::placeholder { color: rgba(11,31,28,.3); }
+    .order-field input:focus,
+    .order-field textarea:focus {
+      border-color: rgba(13,148,136,.45);
+      box-shadow: 0 0 0 3px rgba(13,148,136,.08);
+      background: #FFFFFF;
+    }
+    .order-field input[aria-invalid="true"] { border-color: #F43F5E; }
+
+    /* ── DIVIDER ── */
+    .order-divider {
+      border: none;
+      border-top: 1px solid rgba(11,31,28,.08);
+    }
+
+    /* ── SUBMIT ── */
+    .order-submit {
+      background: #0B1F1C;
+      color: #fff;
+      border-radius: 100px;
+      padding: 15px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      width: 100%;
+      transition: background .18s, transform .18s, box-shadow .18s;
+      margin-top: 4px;
+    }
+    .order-submit:hover {
+      background: #1A3B37;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(11,31,28,.18);
+    }
+    .order-submit:active { transform: translateY(0); }
+    .order-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+    /* ── SUCCESS / ERROR ── */
+    .order-note {
+      font-size: .8rem;
+      color: #4B5D5A;
+      text-align: center;
+    }
+    .order-feedback {
+      display: none;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: .9rem;
+      font-weight: 500;
+      text-align: center;
+    }
+    .order-feedback--success {
+      background: rgba(5,150,105,.10);
+      color: #065F46;
+      border: 1px solid rgba(5,150,105,.2);
+    }
+    .order-feedback--error {
+      background: rgba(244,63,94,.08);
+      color: #9F1239;
+      border: 1px solid rgba(244,63,94,.18);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 520px) {
+      .order-row { grid-template-columns: 1fr; }
+      .order-form { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="order-header">
+    <a href="index.html" class="header-logo" aria-label="Cleava etusivulle">
+      <img src="images/logo.png" alt="Cleava" height="36">
+    </a>
+    <a href="index.html#lahjakortti" class="back-link" aria-label="Takaisin lahjakorttivalintaan">
+      ← Takaisin
+    </a>
+  </header>
+
+  <main class="order-main" id="main">
+    <div class="order-container">
+
+      <div class="order-intro">
+        <span class="order-pill">Tilauslomake</span>
+        <h1>Täytä tilauksen <em>tiedot</em></h1>
+      </div>
+
+      <form class="order-form" id="order-form" novalidate>
+
+        <!-- Selected gift card — filled by JS from URL params -->
+        <div class="order-summary">
+          <div class="order-summary-label">Valittu lahjakortti</div>
+          <div class="order-summary-value" id="selected-card-display">—</div>
+        </div>
+        <input type="hidden" name="valittu_lahjakortti" id="hidden-card">
+        <input type="hidden" name="_subject" value="Uusi lahjakorttitilaus – Cleava">
+
+        <!-- Buyer info -->
+        <div class="order-section">
+          <div class="order-section-label">Ostajan tiedot</div>
+
+          <div class="order-field">
+            <label for="of-nimi">Nimi *</label>
+            <input type="text" id="of-nimi" name="ostaja_nimi"
+                   placeholder="Etunimi Sukunimi" required autocomplete="name">
+          </div>
+
+          <div class="order-row">
+            <div class="order-field">
+              <label for="of-email">Sähköposti *</label>
+              <input type="email" id="of-email" name="ostaja_email"
+                     placeholder="sina@example.fi" required autocomplete="email">
+            </div>
+            <div class="order-field">
+              <label for="of-puh">Puhelinnumero</label>
+              <input type="tel" id="of-puh" name="ostaja_puhelin"
+                     placeholder="+358 40 123 4567" autocomplete="tel">
+            </div>
+          </div>
+        </div>
+
+        <hr class="order-divider">
+
+        <!-- Gift card info -->
+        <div class="order-section">
+          <div class="order-section-label">Lahjakortin tiedot</div>
+
+          <div class="order-field">
+            <label for="of-saaja">Saajan nimi (vapaaehtoinen)</label>
+            <input type="text" id="of-saaja" name="saajan_nimi"
+                   placeholder="Kenelle lahjakortti on?">
+          </div>
+
+          <div class="order-field">
+            <label for="of-viesti">Henkilökohtainen viesti (vapaaehtoinen)</label>
+            <textarea id="of-viesti" name="viesti" rows="4"
+                      placeholder="Kirjoita viesti lahjakorttiin.."></textarea>
+          </div>
+        </div>
+
+        <!-- Feedback messages -->
+        <div class="order-feedback order-feedback--success" id="msg-success" role="alert">
+          ✓ Tilauksesi on vastaanotettu! Otamme yhteyttä pian.
+        </div>
+        <div class="order-feedback order-feedback--error" id="msg-error" role="alert">
+          Lähetys epäonnistui — yritä uudelleen tai soita meille.
+        </div>
+
+        <button type="submit" class="order-submit" id="order-submit">
+          Tilaa lahjakortti
+        </button>
+
+        <p class="order-note">Lahjakortti lähetetään heti maksun vahvistuttua.</p>
+
+      </form>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* ── EmailJS ── */
+      emailjs.init('irivADZOE-lea0Qxw');
+
+      /* ── Read URL params ── */
+      var params = new URLSearchParams(window.location.search);
+      var nimi   = params.get('nimi')  || '';
+      var hinta  = params.get('hinta') || '';
+      var label  = nimi && hinta ? nimi + ' — ' + hinta + ' €' : '—';
+
+      document.getElementById('selected-card-display').textContent = label;
+      document.getElementById('hidden-card').value = label;
+
+      /* ── Form submit ── */
+      var form    = document.getElementById('order-form');
+      var submit  = document.getElementById('order-submit');
+      var msgOk   = document.getElementById('msg-success');
+      var msgErr  = document.getElementById('msg-error');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        /* Basic validation */
+        var valid = true;
+        form.querySelectorAll('[required]').forEach(function (field) {
+          field.removeAttribute('aria-invalid');
+          if (!field.value.trim()) {
+            field.setAttribute('aria-invalid', 'true');
+            valid = false;
+            field.addEventListener('input', function () {
+              field.removeAttribute('aria-invalid');
+            }, { once: true });
+          }
+        });
+        if (!valid) return;
+
+        msgOk.style.display  = 'none';
+        msgErr.style.display = 'none';
+        submit.textContent   = 'Lähetetään…';
+        submit.disabled      = true;
+
+        /* Send via EmailJS — same service/template as main contact form */
+        /* TODO: Create a dedicated gift-card EmailJS template for cleaner emails */
+        emailjs.sendForm('service_rk1v7r2', 'template_ivpuzsb', form)
+          .then(function () {
+            msgOk.style.display = 'block';
+            submit.textContent  = '✓ Tilaus lähetetty!';
+            submit.style.background = 'linear-gradient(135deg,#059669,#34D399)';
+            form.reset();
+            document.getElementById('selected-card-display').textContent = label;
+            document.getElementById('hidden-card').value = label;
+          })
+          .catch(function () {
+            msgErr.style.display = 'block';
+            submit.textContent   = 'Tilaa lahjakortti';
+            submit.style.background = '';
+            submit.disabled = false;
+          });
+      });
+    })();
+  </script>
+
+</body>
+</html>

@@ -84,92 +84,30 @@
      ============================================================ -->
 <section class="hero" id="hero">
 
-  <div class="aurora" aria-hidden="true">
-    <div class="aurora-blob a1"></div>
-    <div class="aurora-blob a2"></div>
-    <div class="aurora-blob a3"></div>
-  </div>
+  <video class="hero-video-bg" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="videos/hero-bg.mp4" type="video/mp4">
+  </video>
+  <div class="hero-video-overlay" aria-hidden="true"></div>
 
   <div class="container hero-inner">
-
-    <div class="hero-text">
-      <div class="hero-badge">
-        <span class="badge-stars" aria-hidden="true">★★★★★</span>
-        <span data-fi="4.9 · 56 Google-arvostelua" data-en="4.9 · 56 Google reviews">4.9 · 56 Google-arvostelua</span>
-      </div>
-      <p class="hero-eyebrow">Helsinki · Espoo · Vantaa · Kauniainen</p>
-      <h1 class="hero-headline"
-          data-fi="Pääkaupunkiseudun luotetuin tapa pitää koti puhtaana."
-          data-en="The most trusted way to keep your home clean in the Helsinki region.">
-        Pääkaupunkiseudun luotetuin tapa pitää koti puhtaana.
-      </h1>
-      <p class="hero-sub"
-         data-fi="Taustatarkistetut ammattilaiset. Tyytyväisyystakuu. Ei pieniä printtejä."
-         data-en="Background-checked professionals. Satisfaction guarantee. No fine print.">
-        Taustatarkistetut ammattilaiset. Tyytyväisyystakuu. Ei pieniä printtejä.
-      </p>
-      <div class="hero-ctas">
-        <a href="#yhteystiedot" class="btn btn-gradient btn-lg">
-          <span data-fi="Pyydä ilmainen tarjous" data-en="Request a free quote">Pyydä ilmainen tarjous</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#palvelut" class="btn btn-ghost btn-lg"
-           data-fi="Katso palvelut" data-en="View services">Katso palvelut</a>
-      </div>
+    <p class="hero-eyebrow" data-fi="SIIVOUSPALVELU" data-en="CLEANING SERVICE">SIIVOUSPALVELU</p>
+    <h1 class="hero-headline">
+      <span class="hl-accent"
+            data-fi="Pääkaupunkiseudun luotetuin tapa"
+            data-en="The most trusted way">Pääkaupunkiseudun luotetuin tapa</span><br>
+      <span data-fi="pitää koti puhtaana."
+            data-en="to keep your home clean.">pitää koti puhtaana.</span>
+    </h1>
+    <p class="hero-sub"
+       data-fi="Taustatarkistetut ammattilaiset. Tyytyväisyystakuu. Ei pieniä printtejä."
+       data-en="Background-checked professionals. Satisfaction guarantee. No fine print.">
+      Taustatarkistetut ammattilaiset. Tyytyväisyystakuu. Ei pieniä printtejä.
+    </p>
+    <div class="hero-ctas">
+      <a href="#yhteystiedot" class="btn btn-hero-white btn-lg">
+        <span data-fi="Pyydä ilmainen tarjous" data-en="Request a free quote">Pyydä ilmainen tarjous</span>
+      </a>
     </div>
-
-    <!-- Right: floating glass card
-         TODO: Replace / accompany with client photo or video:
-         <img src="images/hero.jpg" alt="Puhdas, valoisa koti" class="hero-photo" />
-         or <video autoplay muted loop playsinline src="videos/hero.mp4"></video> -->
-    <div class="hero-visual" aria-hidden="true">
-      <div class="hero-ring ring-1"></div>
-      <div class="hero-ring ring-2"></div>
-
-      <div class="hero-card">
-        <div class="hero-card-shine"></div>
-
-        <div class="hc-head">
-          <div class="hc-avatar">C</div>
-          <div class="hc-head-text">
-            <div class="hc-name"   data-fi="Tarjouspyyntö"         data-en="Quote request">Tarjouspyyntö</div>
-            <div class="hc-brand"  data-fi="Cleava Siivouspalvelut" data-en="Cleava Cleaning Services">Cleava Siivouspalvelut</div>
-          </div>
-          <div class="hc-status"   data-fi="✓ Valmis"              data-en="✓ Ready">✓ Valmis</div>
-        </div>
-
-        <div class="hc-body">
-          <div class="hc-row">
-            <span class="hc-label" data-fi="Palvelu"      data-en="Service">Palvelu</span>
-            <span class="hc-tag"   data-fi="Kotisiivous"  data-en="Home cleaning">Kotisiivous</span>
-          </div>
-          <div class="hc-row">
-            <span class="hc-label" data-fi="Postinumero"  data-en="Postal code">Postinumero</span>
-            <span class="hc-val">00100 · Helsinki</span>
-          </div>
-          <div class="hc-row">
-            <span class="hc-label" data-fi="Ajankohta"            data-en="Date">Ajankohta</span>
-            <span class="hc-val"   data-fi="Ma 18.8. klo 10:00"   data-en="Mon 18.8. at 10:00">Ma 18.8. klo 10:00</span>
-          </div>
-          <div class="hc-divider"></div>
-          <div class="hc-price-row">
-            <span class="hc-price-label" data-fi="Tarjoushinta" data-en="Quote price">Tarjoushinta</span>
-            <span class="hc-price">39 €<small>/h</small></span>
-          </div>
-        </div>
-
-        <button class="hc-cta" tabindex="-1"
-                data-fi="Sovi aika →" data-en="Book a time →">Sovi aika →</button>
-      </div>
-
-      <div class="hero-chip chip-a"
-           data-fi="⭐ 4.9/5 · 56 arvostelua"
-           data-en="⭐ 4.9/5 · 56 reviews">⭐ 4.9/5 · 56 arvostelua</div>
-      <div class="hero-chip chip-b"
-           data-fi="✅ Tyytyväisyystakuu"
-           data-en="✅ Satisfaction guarantee">✅ Tyytyväisyystakuu</div>
-    </div>
-
   </div>
 </section>
 
@@ -681,8 +619,7 @@
         <div class="gift-tier" data-fi="3 h siivous" data-en="3 h cleaning">3 h siivous</div>
         <div class="gift-price">100 €</div>
         <div class="gift-original" data-fi="norm. 114 €" data-en="reg. €114">norm. 114 €</div>
-        <!-- TODO: Connect to real checkout/payment flow when available -->
-        <a href="#yhteystiedot" class="btn btn-dark gift-btn"
+        <a href="lahjakortti-tilaus.html?nimi=3+h+siivous&hinta=100" class="btn btn-dark gift-btn"
            data-fi="Valitse tämä" data-en="Choose this">Valitse tämä</a>
       </div>
 
@@ -690,8 +627,7 @@
         <div class="gift-tier" data-fi="5 h siivous" data-en="5 h cleaning">5 h siivous</div>
         <div class="gift-price">165 €</div>
         <div class="gift-original" data-fi="norm. 190 €" data-en="reg. €190">norm. 190 €</div>
-        <!-- TODO: Connect to real checkout/payment flow when available -->
-        <a href="#yhteystiedot" class="btn btn-dark gift-btn"
+        <a href="lahjakortti-tilaus.html?nimi=5+h+siivous&hinta=165" class="btn btn-dark gift-btn"
            data-fi="Valitse tämä" data-en="Choose this">Valitse tämä</a>
       </div>
 
@@ -699,8 +635,7 @@
         <div class="gift-tier" data-fi="8 h siivous" data-en="8 h cleaning">8 h siivous</div>
         <div class="gift-price">260 €</div>
         <div class="gift-original" data-fi="norm. 304 €" data-en="reg. €304">norm. 304 €</div>
-        <!-- TODO: Connect to real checkout/payment flow when available -->
-        <a href="#yhteystiedot" class="btn btn-dark gift-btn"
+        <a href="lahjakortti-tilaus.html?nimi=8+h+siivous&hinta=260" class="btn btn-dark gift-btn"
            data-fi="Valitse tämä" data-en="Choose this">Valitse tämä</a>
       </div>
 
