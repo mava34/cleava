@@ -1098,7 +1098,7 @@ h3 { font-size: 1.1rem; font-weight: 600; letter-spacing: -.01em; }
   transition: max-height .35s ease, padding .35s ease;
 }
 .faq-a[hidden] { display: block !important; }
-.faq-a:not([hidden]) { max-height: 300px; padding-bottom: 20px; }
+.faq-a:not([hidden]) { max-height: 500px; padding-bottom: 20px; }
 .faq-a p { padding-inline: 24px; color: var(--muted); font-size: .9375rem; line-height: 1.7; }
 
 
@@ -1315,6 +1315,15 @@ a.cd-val:hover { color: var(--primary); }
   .section-header { margin-bottom: 40px; }
   .container { padding-inline: 20px; }
 
+  /* Declutter header — phone btn and lang switcher are in the mobile menu */
+  .header-right > .btn { display: none; }
+  .lang-switcher:not(.lang-switcher--mobile) { display: none; }
+
+  /* Prevent iOS Safari auto-zoom (triggers when input font < 16px) */
+  input, select, textarea { font-size: 1rem; }
+
+  /* Hero */
+  .hero-headline { font-size: clamp(1.75rem, 6.5vw, 2.4rem); }
   .hero-ctas { flex-direction: column; }
   .hero-ctas .btn { width: 100%; justify-content: center; }
   .hero-chip { display: none; }
@@ -1326,6 +1335,9 @@ a.cd-val:hover { color: var(--primary); }
   .pricing-grid { grid-template-columns: 1fr 1fr; }
   .cf-row { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+
+  /* Footer legal links — wrap gracefully on narrow screens */
+  .footer-legal-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 0; }
 }
 
 /* --- SMALL MOBILE ≤400px ------------------------------ */
