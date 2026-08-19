@@ -1237,6 +1237,39 @@ a.cd-val:hover { color: var(--primary); }
 
 .footer-bottom { border-top: 1px solid rgba(255,255,255,.06); padding-block: 20px; }
 .footer-bottom p { font-size: .78rem; color: rgba(255,255,255,.25); text-align: center; }
+.footer-legal-links { margin-top: 10px; }
+.footer-legal-links a { color: rgba(255,255,255,.28); font-size: .75rem; transition: color .15s; }
+.footer-legal-links a:hover { color: var(--mint); }
+.footer-legal-links span { color: rgba(255,255,255,.15); margin-inline: 6px; }
+
+/* ==========================================================
+   LEGAL PAGES
+   ========================================================== */
+.legal-content { max-width: 760px; margin-inline: auto; }
+.legal-content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -.025em;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.legal-date { font-size: .875rem; color: var(--muted); margin-bottom: 48px; display: block; }
+.legal-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 40px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.legal-content p { color: var(--muted); line-height: 1.85; margin-bottom: 14px; }
+.legal-content ul { padding-left: 22px; list-style: disc; margin-bottom: 14px; }
+.legal-content ul li { color: var(--muted); line-height: 1.75; margin-bottom: 6px; }
+.legal-content a { color: var(--primary); text-decoration: underline; }
+.legal-content a:hover { color: var(--primary-dark); }
 
 
 /* ==========================================================
